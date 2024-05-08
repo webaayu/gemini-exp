@@ -36,7 +36,7 @@ def read_pdf(file):
         return None
 
 #Streamlit App
-st.set_page_config(page_title="Invoice Extractor")
+st.set_page_config(page_title="Information Extractor")
 st.header("Extract Information from PDF")
 #input=st.text_input("Ask question: ",key="input")
 uploaded_file = st.file_uploader("choose a pdf file...", type=["pdf"])
