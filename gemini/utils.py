@@ -1,1 +1,1 @@
-ollama run llama2
+
