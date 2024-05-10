@@ -1,7 +1,7 @@
 #Information Extractor
-import os
-from dotenv import load_dotenv
-load_dotenv() #load all environment variables from .env
+#import os
+#from dotenv import load_dotenv
+#load_dotenv() #load all environment variables from .env
 import streamlit as st
 import fitz  # PyMuPDF
 from langchain_community.llms import Ollama
