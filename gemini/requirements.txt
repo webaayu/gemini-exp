@@ -1,0 +1,5 @@
+os
+dotenv
+streamlit
+PyMuPDF
+langchain_community
