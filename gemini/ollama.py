@@ -1,19 +1,14 @@
-#Invoice Extractor
+#Information Extractor
 import os
 from dotenv import load_dotenv
 load_dotenv() #load all environment variables from .env
 import streamlit as st
 import fitz  # PyMuPDF
-#import google.generativeai as genai
 from langchain_community.llms import Ollama
 
-
-#configure api-key
-#genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
-#function to load gemini pro vision model and get response
+#function to load 'llama2' and get response
 def get_ollama_response(input,content,prompt):  #input: how LLM model behave like, #image: To extract info, prompt: ask something
-    # loading the gemini model
+    # loading llama2 model
     model=Ollama(model='llama2')
     response=model.invoke([input,content,prompt]) #get response from model
     return response
@@ -38,7 +33,6 @@ def read_pdf(file):
 #Streamlit App
 st.set_page_config(page_title="Information Extractor")
 st.header("Extract Information from PDF")
-#input=st.text_input("Ask question: ",key="input")
 uploaded_file = st.file_uploader("choose a pdf file...", type=["pdf"])
 
 if uploaded_file is not None:
@@ -62,7 +56,6 @@ you will have to answer questions based on the input file.
 """
 #if submit button is clicked,
 if submit:
-   # cont=read_pdf(uploaded_file)
     response=get_ollama_response(input_prompt,content,input)
     st.subheader("The response is..")
     st.write(response)
