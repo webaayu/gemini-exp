@@ -1,19 +1,19 @@
-#Information Extractor
+# Information Extractor
 import os
-#from dotenv import load_dotenv
-#load_dotenv() #load all environment variables from .env
+# from dotenv import load_dotenv
+# load_dotenv() #load all environment variables from .env
 import streamlit as st
 import fitz  # PyMuPDF
 from langchain_community.llms import Ollama
 
-#function to load 'llama2' and get response
+# function to load 'llama2' and get response
 def get_ollama_response(input,content,prompt):  #input: how LLM model behave like, #image: To extract info, prompt: ask something
     # loading llama2 model
     model=Ollama(model='llama2')
     response=model.invoke([input,content,prompt]) #get response from model
     return response
 
-#function to provide pdf
+# function to provide pdf
 def read_pdf(file):
     if file.name.endswith(".pdf"):
         try:
