@@ -1,5 +1,4 @@
 os-sys
-dotenv
 streamlit
 PyMuPDF
 langchain-community
